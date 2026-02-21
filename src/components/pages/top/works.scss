@@ -70,10 +70,6 @@
       object-fit: cover;
       transition: transform 0.8s var(--easing-smooth);
     }
-
-    &:hover .c-picture img {
-      transform: scale(1.04);
-    }
   }
 
   &__body {
@@ -83,12 +79,9 @@
     align-items: flex-start;
     padding: rem(120) rem(80);
     background-color: var(--color-bg);
-    border-top: 1px solid var(--color-border);
 
     @include sp {
       padding: rem(64) rem(20);
-      border-top: none;
-      border-left: none;
     }
   }
 
@@ -99,13 +92,14 @@
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.08em;
+    color: var(--color-accent);
   }
 
   &__text {
     margin: 0 0 rem(48);
     font-size: fluid(15, 17);
     line-height: 2;
-    color: rgba(#3d3d3d, 0.7);
+    color: rgba(#ccc9c2, 0.6);
     letter-spacing: 0.05em;
   }
 }
