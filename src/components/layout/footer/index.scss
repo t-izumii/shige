@@ -1,53 +1,57 @@
 @use '@/styles/abstracts' as *;
 
 .l-footer {
-  background-color: #1a1a1a;
+  background-color: var(--color-dark);
   color: #fff;
+  border-top: 1px solid rgba(#fff, 0.1);
 
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: rem(40);
-    padding: rem(64) 0 rem(32);
+    gap: rem(48);
+    padding: rem(80) 0 rem(40);
 
     @include sp {
       gap: rem(32);
-      padding: rem(48) 0 rem(24);
+      padding: rem(56) 0 rem(32);
     }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: rem(16);
+    gap: rem(20);
     margin: 0;
     padding: 0;
   }
 
   &__row {
-    display: flex;
+    display: grid;
+    grid-template-columns: rem(96) 1fr;
     gap: rem(24);
+    align-items: baseline;
 
     @include sp {
-      flex-direction: column;
-      gap: rem(4);
+      grid-template-columns: rem(72) 1fr;
+      gap: rem(16);
     }
   }
 
   &__term {
-    flex-shrink: 0;
-    width: rem(80);
-    font-size: rem(12);
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: rgba(#fff, 0.5);
+    font-family: var(--font-family-en);
+    font-size: rem(14);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    text-transform: uppercase;
   }
 
   &__desc {
     margin: 0;
-    font-size: rem(14);
+    font-family: var(--font-family-sans);
+    font-size: rem(16);
     line-height: 1.8;
-    color: rgba(#fff, 0.85);
+    color: rgba(#fff, 0.6);
 
     a {
       color: inherit;
@@ -62,8 +66,10 @@
 
   &__copy {
     display: block;
-    font-size: rem(11);
-    letter-spacing: 0.05em;
-    color: rgba(#fff, 0.4);
+    font-family: var(--font-family-en);
+    font-size: rem(13);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgba(#fff, 0.25);
   }
 }

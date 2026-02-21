@@ -5,8 +5,8 @@
   top: 0;
   z-index: 700;
   width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
 
   &__inner {
     display: flex;
@@ -14,10 +14,10 @@
     justify-content: space-between;
     max-width: rem(1440);
     margin: 0 auto;
-    padding: rem(16) rem(32);
+    padding: rem(20) rem(40);
 
     @include sp {
-      padding: rem(12) rem(16);
+      padding: rem(16) rem(20);
     }
   }
 
@@ -35,26 +35,28 @@
   &__list {
     display: flex;
     align-items: center;
-    gap: rem(32);
+    gap: rem(40);
     margin: 0;
     padding: 0;
     list-style: none;
 
     @include sp {
-      gap: rem(16);
+      gap: rem(20);
     }
   }
 
   &__link {
-    font-size: rem(14);
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: #333;
+    font-family: var(--font-family-en);
+    font-size: rem(15);
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    color: var(--color-dark);
     text-decoration: none;
+    text-transform: uppercase;
     transition: color 0.2s var(--easing-smooth);
 
     &:hover {
-      color: #000;
+      color: var(--color-accent);
     }
   }
 }

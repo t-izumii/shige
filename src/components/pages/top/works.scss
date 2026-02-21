@@ -1,42 +1,45 @@
 @use '@/styles/abstracts' as *;
 
 .p-works {
-  padding: rem(80) 0;
-
-  @include sp {
-    padding: rem(48) 0;
-  }
-
-  &__heading {
-    margin: 0 0 rem(40);
+  &__header {
+    padding-top: rem(200);
+    padding-bottom: rem(120);
 
     @include sp {
-      margin-bottom: rem(24);
+      padding-top: rem(100);
+      padding-bottom: rem(64);
     }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: rem(64);
+    gap: rem(240);
     margin: 0;
     padding: 0;
     list-style: none;
 
     @include sp {
-      gap: rem(40);
+      gap: rem(120);
     }
   }
 
-  &__media {
-    .c-picture img {
-      width: 100%;
-      height: auto;
+  &__item {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    min-height: 80vh;
+
+    &[data-reverse] {
+      grid-template-columns: 45fr 55fr;
+    }
+
+    @include sp {
+      grid-template-columns: 1fr;
+      min-height: auto;
     }
   }
 
-  // 偶数番目はmediaを右へ
-  &__item:nth-child(even) &__media {
+  &__item[data-reverse] &__media {
     order: 1;
 
     @include sp {
@@ -44,22 +47,65 @@
     }
   }
 
+  &__media {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    @include sp {
+      position: static;
+      height: 60vw;
+    }
+
+    .c-picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .c-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--easing-smooth);
+    }
+
+    &:hover .c-picture img {
+      transform: scale(1.04);
+    }
+  }
+
   &__body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+    padding: rem(120) rem(80);
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+
+    @include sp {
+      padding: rem(64) rem(20);
+      border-top: none;
+      border-left: none;
+    }
   }
 
   &__title {
-    margin: 0 0 rem(16);
-    font-size: fluid(18, 24);
-    font-weight: 700;
-    line-height: 1.4;
+    margin: 0 0 rem(24);
+    font-family: var(--font-family-base);
+    font-size: fluid(20, 30);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
   }
 
   &__text {
-    margin: 0;
-    font-size: fluid(14, 16);
-    line-height: 1.8;
+    margin: 0 0 rem(48);
+    font-size: fluid(15, 17);
+    line-height: 2;
+    color: rgba(#3d3d3d, 0.7);
+    letter-spacing: 0.05em;
   }
 }

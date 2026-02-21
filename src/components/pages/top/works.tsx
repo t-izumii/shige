@@ -30,35 +30,25 @@ const works = [
 export default function Works() {
   return (
     <section className="p-works">
-      <div className="o-container">
-        <Heading className="p-works__heading">事業紹介</Heading>
-
-        <ul className="p-works__list">
-          {works.map(({ title, text, href, img }) => (
-            <li key={title} className="p-works__item">
-              <div
-                className="p-works__grid o-grid"
-                style={{
-                  '--_grid-layout': '1fr 1fr',
-                  '--_grid-gap': '2.5rem',
-                  '--_grid-repeat-sp': '1',
-                  '--_grid-gap-sp': '1.5rem',
-                } as preact.CSSProperties}
-              >
-                <div className="p-works__media">
-                  <Picture img={img} />
-                </div>
-
-                <div className="p-works__body">
-                  <h3 className="p-works__title">{title}</h3>
-                  <p className="p-works__text">{text}</p>
-                  <Button label="詳しく見る" href={href} className="p-works__button" />
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className="p-works__header o-container">
+        <Heading className="p-works__heading" enLabel="Works">事業紹介</Heading>
       </div>
+
+      <ul className="p-works__list">
+        {works.map(({ title, text, href, img }, i) => (
+          <li key={title} className="p-works__item" data-reverse={i % 2 !== 0 ? '' : undefined}>
+            <div className="p-works__media">
+              <Picture img={img} />
+            </div>
+
+            <div className="p-works__body">
+              <h3 className="p-works__title">{title}</h3>
+              <p className="p-works__text">{text}</p>
+              <Button label="詳しく見る" href={href} />
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

@@ -1,50 +1,129 @@
 @use '@/styles/abstracts' as *;
 
 .p-about {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  background-color: #1a1a1a;
+  position: relative;
+  margin-top: rem(400);
+
+  @include sp {
+    margin-top: rem(160);
+  }
+
+  &__media {
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(#000, 0.5);
+    }
+
+    .c-picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .c-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
 
   &__inner {
-    max-width: rem(720);
+    max-width: rem(800);
+    margin: 0 auto;
+    padding: rem(200) rem(40) rem(240);
+    text-align: center;
+
+    @include sp {
+      padding: rem(120) rem(20) rem(160);
+    }
   }
 
   &__heading {
-    margin: 0 0 rem(40);
-    color: #fff;
+    align-items: center;
+    margin: 0 0 rem(64);
 
     @include sp {
-      margin-bottom: rem(24);
+      margin-bottom: rem(40);
     }
+  }
+
+  &__rule {
+    display: flex;
+    align-items: center;
+    gap: rem(24);
+    margin: 0 0 rem(64);
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: rgba(#fff, 0.3);
+    }
+
+    @include sp {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__rule-dot {
+    width: rem(6);
+    height: rem(6);
+    background-color: var(--color-accent);
+    border-radius: 50%;
   }
 
   &__copy {
     display: flex;
     flex-direction: column;
-    gap: rem(24);
-    margin: 0 0 rem(40);
+    gap: rem(32);
+    margin: 0 0 rem(64);
+    text-align: left;
 
     @include sp {
-      gap: rem(16);
-      margin-bottom: rem(32);
+      gap: rem(24);
+      margin-bottom: rem(48);
     }
   }
 
   &__lead {
     margin: 0;
-    font-size: fluid(14, 16);
-    font-weight: 500;
+    font-family: var(--font-family-base);
+    font-size: fluid(17, 20);
+    font-weight: 400;
     line-height: 2;
-    color: #fff;
-    letter-spacing: 0.05em;
+    color: rgba(#fff, 0.9);
+    letter-spacing: 0.06em;
   }
 
-  &__text {
-    margin: 0;
-    font-size: fluid(13, 14);
-    line-height: 2.2;
-    color: rgba(#fff, 0.7);
-    letter-spacing: 0.03em;
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .c-heading__en {
+    color: var(--color-accent);
+  }
+
+  .c-heading__ja {
+    color: #fff;
+  }
+
+  .c-button {
+    color: #fff;
+    border-color: rgba(#fff, 0.5);
   }
 }

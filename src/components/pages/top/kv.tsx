@@ -6,7 +6,8 @@ export default function Kv() {
     <section className="p-kv">
       <Carousel
         options={{
-          type: 'loop',
+          type: 'fade',
+          rewind: true,
           autoplay: true,
           interval: 4000,
           arrows: false,
