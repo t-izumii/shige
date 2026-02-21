@@ -37,7 +37,7 @@ export default function Works() {
       <ul className="p-works__list">
         {works.map(({ title, text, href, img }, i) => (
           <li key={title} className="p-works__item" data-reverse={i % 2 !== 0 ? '' : undefined}>
-            <div className="p-works__media">
+            <div className="p-works__media js-inView u-imgMask" data-in-view-class="is-active">
               <Picture img={img} />
             </div>
 

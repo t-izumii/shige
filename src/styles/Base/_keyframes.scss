@@ -4,3 +4,20 @@
     opacity: 0;
   }
 }
+
+// マスクワイプ
+@keyframes mask-wipe-in {
+  from { right: 100%; }
+  to   { right: 0%; }
+}
+
+@keyframes mask-wipe-out {
+  from { left: 0%; }
+  to   { left: 100%; }
+}
+
+// 画像クリップリビール
+@keyframes img-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
