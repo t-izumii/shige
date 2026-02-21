@@ -1,0 +1,69 @@
+@use '@/styles/abstracts' as *;
+
+.l-footer {
+  background-color: #1a1a1a;
+  color: #fff;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+    padding: rem(64) 0 rem(32);
+
+    @include sp {
+      gap: rem(32);
+      padding: rem(48) 0 rem(24);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    margin: 0;
+    padding: 0;
+  }
+
+  &__row {
+    display: flex;
+    gap: rem(24);
+
+    @include sp {
+      flex-direction: column;
+      gap: rem(4);
+    }
+  }
+
+  &__term {
+    flex-shrink: 0;
+    width: rem(80);
+    font-size: rem(12);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: rgba(#fff, 0.5);
+  }
+
+  &__desc {
+    margin: 0;
+    font-size: rem(14);
+    line-height: 1.8;
+    color: rgba(#fff, 0.85);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s var(--easing-smooth);
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__copy {
+    display: block;
+    font-size: rem(11);
+    letter-spacing: 0.05em;
+    color: rgba(#fff, 0.4);
+  }
+}

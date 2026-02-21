@@ -1,0 +1,50 @@
+@use '@/styles/abstracts' as *;
+
+.p-about {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+
+  &__inner {
+    max-width: rem(720);
+  }
+
+  &__heading {
+    margin: 0 0 rem(40);
+    color: #fff;
+
+    @include sp {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    margin: 0 0 rem(40);
+
+    @include sp {
+      gap: rem(16);
+      margin-bottom: rem(32);
+    }
+  }
+
+  &__lead {
+    margin: 0;
+    font-size: fluid(14, 16);
+    font-weight: 500;
+    line-height: 2;
+    color: #fff;
+    letter-spacing: 0.05em;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: fluid(13, 14);
+    line-height: 2.2;
+    color: rgba(#fff, 0.7);
+    letter-spacing: 0.03em;
+  }
+}

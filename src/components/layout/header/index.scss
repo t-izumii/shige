@@ -1,0 +1,60 @@
+@use '@/styles/abstracts' as *;
+
+.l-header {
+  position: sticky;
+  top: 0;
+  z-index: 700;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: rem(1440);
+    margin: 0 auto;
+    padding: rem(16) rem(32);
+
+    @include sp {
+      padding: rem(12) rem(16);
+    }
+  }
+
+  &__logo {
+    margin: 0;
+    font-size: inherit;
+    line-height: 1;
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: rem(32);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include sp {
+      gap: rem(16);
+    }
+  }
+
+  &__link {
+    font-size: rem(14);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s var(--easing-smooth);
+
+    &:hover {
+      color: #000;
+    }
+  }
+}

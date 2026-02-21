@@ -1,0 +1,13 @@
+@use '@/styles/abstracts' as *;
+
+.c-picture {
+  img {
+    width: calc(var(--width) / #{$rem-base} * 1rem);
+    height: auto;
+    object-fit: cover;
+
+    @include responsive('md') {
+      width: calc(var(--width-sp, var(--width)) / #{$rem-base} * 1rem);
+    }
+  }
+}

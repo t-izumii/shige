@@ -1,0 +1,65 @@
+@use '@/styles/abstracts' as *;
+
+.p-works {
+  padding: rem(80) 0;
+
+  @include sp {
+    padding: rem(48) 0;
+  }
+
+  &__heading {
+    margin: 0 0 rem(40);
+
+    @include sp {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(64);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include sp {
+      gap: rem(40);
+    }
+  }
+
+  &__media {
+    .c-picture img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // 偶数番目はmediaを右へ
+  &__item:nth-child(even) &__media {
+    order: 1;
+
+    @include sp {
+      order: 0;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    margin: 0 0 rem(16);
+    font-size: fluid(18, 24);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: fluid(14, 16);
+    line-height: 1.8;
+  }
+}

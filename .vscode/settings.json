@@ -1,0 +1,27 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "scss"],
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.scss$",
+        "cmd": "cd ${workspaceFolder} && npx stylelint --fix ${file}"
+      }
+    ]
+  },
+  "cSpell.words": [
+    "markuplint",
+    "gsap",
+    "stylelint",
+    "eslint",
+    "prettierrc",
+    "astro",
+    "preact"
+  ]
+}

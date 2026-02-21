@@ -1,0 +1,18 @@
+@use '@/styles/abstracts' as *;
+
+.p-kv {
+  position: relative;
+  overflow: hidden;
+}
+
+.p-kv__slide {
+  height: calc(100vh - rem(107));
+  overflow: hidden;
+
+  .c-picture {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
