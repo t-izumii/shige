@@ -11,15 +11,15 @@ import { ScrollTo } from "./components/common/ScrollTo";
 import { InView } from "./components/common/InView";
 import { Carousel } from "./components/common/Carousel";
 import { Scroll } from "./components/layout/Scroll";
+import { HeaderHeight } from "./components/common/HeaderHeight";
 // import { Events } from "./constants/events";
 // import { EventEmitter } from "./utils/EventEmitter";
 
 type ComponentList = { selector: string; component: typeof Component }[];
 
 const LAYOUT_COMPONENTS: ComponentList = [
-  // body
-  // Layout
   // Header
+  { selector: '.l-header', component: HeaderHeight },
 ];
 
 const PAGE_COMPONENTS: ComponentList = [

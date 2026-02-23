@@ -1,0 +1,245 @@
+@use '@/styles/abstracts' as *;
+
+// ============================================================
+// Hero
+// ============================================================
+.p-hs-hero {
+  padding: rem(160) 0 rem(120);
+
+  @include sp {
+    padding: rem(100) 0 rem(80);
+  }
+
+  &__heading {
+    margin: 0 0 rem(64);
+
+    @include sp {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(80);
+    align-items: center;
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: rem(40);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-family: var(--font-family-base);
+    font-size: fluid(16, 19);
+    line-height: 2.2;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+
+  &__media {
+    .c-picture {
+      display: block;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+// ============================================================
+// 特徴
+// ============================================================
+.p-hs-features {
+  padding: rem(120) 0;
+
+  @include sp {
+    padding: rem(80) 0;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: rem(360) 1fr;
+    gap: rem(80);
+    align-items: start;
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: rem(48);
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+
+    @include sp {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(8);
+    }
+  }
+
+  &__gallery-item {
+    .c-picture {
+      display: block;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: rem(240);
+      object-fit: cover;
+
+      @include sp {
+        height: rem(100);
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(48) rem(40);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: rem(32);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--font-family-base);
+    font-size: fluid(17, 20);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+
+    &::before {
+      content: '';
+      display: block;
+      width: rem(24);
+      height: 1px;
+      margin-bottom: rem(16);
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: fluid(14, 15);
+    line-height: 2;
+    letter-spacing: 0.05em;
+    color: rgba(#ccc9c2, 0.6);
+  }
+}
+
+// ============================================================
+// 流れ
+// ============================================================
+.p-hs-flow {
+  padding: rem(120) 0 rem(200);
+
+  @include sp {
+    padding: rem(80) 0 rem(120);
+  }
+
+  &__heading {
+    margin: 0 0 rem(64);
+
+    @include sp {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: flow;
+
+    @include sp {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+      z-index: 1;
+      font-family: var(--font-family-sans);
+      font-size: rem(18);
+      color: var(--color-accent);
+
+      @include sp {
+        content: '↓';
+        top: auto;
+        bottom: 0;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 50%);
+      }
+    }
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: rem(12);
+    padding: rem(32) rem(24);
+    height: 100%;
+    text-align: center;
+    border: 1px solid var(--color-border);
+
+    @include sp {
+      flex-direction: row;
+      justify-content: flex-start;
+      text-align: left;
+      padding: rem(20) rem(24);
+    }
+  }
+
+  &__num {
+    font-family: var(--font-family-en);
+    font-size: rem(13);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+  }
+
+  &__label {
+    font-family: var(--font-family-base);
+    font-size: fluid(15, 17);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+}

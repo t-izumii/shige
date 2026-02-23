@@ -6,7 +6,7 @@
 }
 
 .p-kv__slide {
-  height: calc(100svh - rem(74));
+  height: calc(100vh - var(--header-height, 0px));
   overflow: hidden;
 
   .c-picture {
