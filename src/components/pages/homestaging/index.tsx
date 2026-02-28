@@ -29,9 +29,8 @@ const features = [
 ];
 
 const galleryImages = [
-  { src: '/assets/images/homestaging/gallery-01.jpg', alt: 'LDK施工事例' },
-  { src: '/assets/images/homestaging/gallery-02.jpg', alt: 'トイレ施工事例' },
-  { src: '/assets/images/homestaging/gallery-03.jpg', alt: '寝室施工事例' },
+  { src: '/assets/images/homestaging/img-01.jpg', alt: 'LDK施工事例' },
+  { src: '/assets/images/homestaging/img-01.jpg', alt: 'トイレ施工事例' },
 ];
 
 const flowSteps = [
@@ -48,7 +47,9 @@ export default function Pages() {
       {/* Hero */}
       <section className="p-hs-hero">
         <div className="p-hs-hero__inner o-container">
-          <Heading className="p-hs-hero__heading" enLabel="Homestaging">ホームステージング事業</Heading>
+          <Heading className="p-hs-hero__heading" enLabel="Homestaging">
+            ホームステージング事業
+          </Heading>
 
           <div className="p-hs-hero__content">
             <div className="p-hs-hero__text-block">
@@ -60,7 +61,7 @@ export default function Pages() {
             <div className="p-hs-hero__media">
               <Picture
                 img={{
-                  src: '/assets/images/homestaging/hero.jpg',
+                  src: '/assets/images/homestaging/hero.png',
                   alt: 'ホームステージング事例',
                   width: 720,
                   height: 480,
@@ -98,13 +99,17 @@ export default function Pages() {
       {/* 流れ */}
       <section className="p-hs-flow">
         <div className="p-hs-flow__inner o-container">
-          <Heading className="p-hs-flow__heading" enLabel="Flow">ホームステージングの流れ</Heading>
+          <Heading className="p-hs-flow__heading" enLabel="Flow">
+            ホームステージングの流れ
+          </Heading>
 
           <ol className="p-hs-flow__list">
             {flowSteps.map((step, i) => (
               <li key={step} className="p-hs-flow__item">
                 <div className="p-hs-flow__step">
-                  <span className="p-hs-flow__num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="p-hs-flow__num">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
                   <span className="p-hs-flow__label">{step}</span>
                 </div>
               </li>

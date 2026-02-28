@@ -28,6 +28,22 @@
     letter-spacing: 0.05em;
     color: rgba(#ccc9c2, 0.7);
   }
+
+  &__services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8) rem(32);
+    margin: 0;
+    padding: rem(32) 0 0;
+    list-style: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  &__service {
+    font-size: fluid(14, 16);
+    letter-spacing: 0.06em;
+    color: var(--color-text);
+  }
 }
 
 // ============================================================

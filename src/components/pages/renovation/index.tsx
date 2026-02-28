@@ -2,12 +2,14 @@ import Heading from '../../ui/heading';
 import WorksCard from '../../features/worksCard';
 
 const works = [
-  { title: '戸建てリノベーション / 福岡市城南区' },
-  { title: 'マンションリノベーション / 福岡市中央区' },
-  { title: '店舗リノベーション / 福岡市博多区' },
-  { title: '戸建てリノベーション / 福岡市早良区' },
-  { title: 'マンションリノベーション / 福岡市南区' },
-  { title: '店舗リノベーション / 福岡市西区' },
+  { title: '​事務所修繕、改築' },
+  { title: '事務所キッチン' },
+  { title: '事務所キッチン' },
+  { title: '​ＬＤＫリフォーム​' },
+  { title: '​洗面所リフォーム' },
+  { title: '​トイレリフォーム' },
+  { title: '​ＬＤビフォー' },
+  { title: '​ＬＤアフター' },
 ];
 
 export default function Pages() {
@@ -18,9 +20,13 @@ export default function Pages() {
         <div className="p-renovation-hero__inner o-container">
           <Heading enLabel="Renovation">リノベーション事業</Heading>
           <p className="p-renovation-hero__text">
-            既存の住まいを再生し、機能性とデザイン性を兼ね備えた空間へと生まれ変わらせます。
-            お客様一人ひとりの暮らしに寄り添い、理想の空間を丁寧に実現します。
+            アパート、マンション、戸建て、店舗、事務所などの修繕や改築、リフォーム等、小さなことでもご相談承ります。
           </p>
+          <ul className="p-renovation-hero__services">
+            {['クロス工事', '電気工事', '水道工事', '床工事', '大工工事', '塗装', '美装'].map((s) => (
+              <li key={s} className="p-renovation-hero__service">・{s}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
