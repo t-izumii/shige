@@ -2,25 +2,42 @@
 
 .c-works-card {
   display: flex;
-  align-items: flex-end;
-  min-height: rem(160);
-  padding: rem(24) rem(28);
+  flex-direction: column;
+  align-items: flex-start;
   text-decoration: none;
   border: 1px solid var(--color-border);
-  transition: border-color 0.3s var(--easing-smooth), background-color 0.3s var(--easing-smooth);
+  transition:
+    border-color 0.3s var(--easing-smooth),
+    background-color 0.3s var(--easing-smooth);
+  overflow: hidden;
 
   &:is(a):hover {
     background-color: rgba(#fff, 0.03);
     border-color: rgba(#ccc9c2, 0.3);
+
+    .c-works-card__media img {
+      transform: scale(1.04);
+    }
+  }
+
+  &__media {
+    width: 100%;
+    overflow: hidden;
+
   }
 
   &__title {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
     margin: 0;
+    padding: rem(24) rem(28);
     font-family: var(--font-family-base);
     font-size: fluid(15, 17);
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.08em;
     color: var(--color-text);
+    min-height: rem(80);
   }
 }

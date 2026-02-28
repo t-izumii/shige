@@ -1,6 +1,5 @@
-interface Source {
+interface SpSource {
   src: string;
-  media?: string;
   width?: number;
   height?: number;
 }
@@ -10,18 +9,19 @@ interface ImgProps {
   alt: string;
   width?: number;
   height?: number;
-  widthSp?: number;
   fetchpriority?: 'high' | 'low' | 'auto';
   loading?: 'lazy' | 'eager';
 }
 
 interface Props {
   img: ImgProps;
+  sp?: SpSource;
+  width?: string;
+  widthSp?: string;
   className?: string;
-  sources?: Source[];
 }
 
-export default function Picture({ img, className, sources }: Props) {
+export default function Picture({ img, sp, width, widthSp, className }: Props) {
   const baseUrl = import.meta.env.BASE_URL || '';
   const resolvePath = (path: string) =>
     path.startsWith('http') ? path : `${baseUrl}${path}`;
@@ -31,20 +31,23 @@ export default function Picture({ img, className, sources }: Props) {
       className={`c-picture ${className || ''}`}
       style={
         {
-          '--width': img.width ? img.width : undefined,
-          '--width-sp': img.widthSp ? img.widthSp : undefined,
+          '--aspect-ratio-pc':
+            img.width && img.height ? `${img.width} / ${img.height}` : undefined,
+          '--aspect-ratio-sp':
+            sp?.width && sp?.height ? `${sp.width} / ${sp.height}` : undefined,
+          '--display-width': width ?? undefined,
+          '--display-width-sp': widthSp ?? undefined,
         } as preact.CSSProperties
       }
     >
-      {sources?.map((source, index) => (
+      {sp && (
         <source
-          key={index}
-          srcSet={resolvePath(source.src)}
-          media={source.media || 'width < 768px'}
-          width={source.width}
-          height={source.height}
+          srcSet={resolvePath(sp.src)}
+          media="(width < 768px)"
+          width={sp.width}
+          height={sp.height}
         />
-      ))}
+      )}
       <img
         src={resolvePath(img.src)}
         alt={img.alt}

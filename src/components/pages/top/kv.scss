@@ -3,6 +3,62 @@
 .p-kv {
   position: relative;
   overflow: hidden;
+
+  &__copy {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 rem(80);
+    background: linear-gradient(to right, rgba(#000, 0.5) 0%, transparent 70%);
+    pointer-events: none;
+
+    @include sp {
+      padding: 0 rem(24);
+      background: linear-gradient(to bottom, transparent 20%, rgba(#000, 0.5) 60%);
+      justify-content: flex-end;
+      padding-bottom: rem(80);
+    }
+  }
+
+  &__copy-en {
+    margin: 0 0 rem(16);
+    font-family: var(--font-family-en);
+    font-size: fluid(12, 14);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+
+    @include sp {
+      margin-bottom: rem(12);
+    }
+  }
+
+  &__copy-ja {
+    margin: 0 0 rem(24);
+    font-family: var(--font-family-base);
+    font-size: fluid(28, 48);
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+    color: #fff;
+
+    @include sp {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__copy-sub {
+    margin: 0;
+    font-family: var(--font-family-base);
+    font-size: fluid(13, 15);
+    line-height: 2;
+    letter-spacing: 0.08em;
+    color: rgba(#fff, 0.7);
+  }
 }
 
 .p-kv__slide {
@@ -10,15 +66,8 @@
   overflow: hidden;
 
   .c-picture {
-    display: block;
-    width: 100%;
     height: 100%;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    aspect-ratio: unset;
   }
 }
 

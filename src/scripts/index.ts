@@ -12,6 +12,7 @@ import { InView } from "./components/common/InView";
 import { Carousel } from "./components/common/Carousel";
 import { Scroll } from "./components/layout/Scroll";
 import { HeaderHeight } from "./components/common/HeaderHeight";
+import { HamburgerMenu } from "./components/common/HamburgerMenu";
 // import { Events } from "./constants/events";
 // import { EventEmitter } from "./utils/EventEmitter";
 
@@ -20,6 +21,7 @@ type ComponentList = { selector: string; component: typeof Component }[];
 const LAYOUT_COMPONENTS: ComponentList = [
   // Header
   { selector: '.l-header', component: HeaderHeight },
+  { selector: '.l-header', component: HamburgerMenu },
 ];
 
 const PAGE_COMPONENTS: ComponentList = [

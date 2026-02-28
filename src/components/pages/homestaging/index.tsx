@@ -30,15 +30,18 @@ const features = [
 
 const galleryImages = [
   { src: '/assets/images/homestaging/img-01.jpg', alt: 'LDK施工事例' },
-  { src: '/assets/images/homestaging/img-01.jpg', alt: 'トイレ施工事例' },
+  { src: '/assets/images/homestaging/img-02.jpg', alt: 'トイレ施工事例' },
 ];
 
 const flowSteps = [
-  'お問合せ',
-  '内容のご相談',
-  'ご契約・ご入金',
-  '家具の設置',
-  '家具の撤去',
+  'お問い合わせ',
+  '現地立会い',
+  'プラン図提案',
+  'ご依頼確定',
+  '設置日打ち合わせ',
+  'ご入金',
+  '家具設置',
+  '展示終了・回収',
 ];
 
 export default function Pages() {
@@ -79,7 +82,7 @@ export default function Pages() {
             {galleryImages.map(({ src, alt }) => (
               <div key={src} className="p-hs-features__gallery-item">
                 <Picture
-                  img={{ src, alt, width: 400, height: 300, loading: 'lazy' }}
+                  img={{ src, alt, width: 300, height: 400, loading: 'lazy' }}
                 />
               </div>
             ))}

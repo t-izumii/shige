@@ -21,6 +21,8 @@ export default function Header() {
                 width: 200,
                 height: 74,
               }}
+              width="10rem"
+              widthSp="8rem"
             />
           </Link>
         </h1>
@@ -36,6 +38,16 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+
+        <button
+          className="l-header__toggle"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+        >
+          <span className="l-header__toggle-line" />
+          <span className="l-header__toggle-line" />
+          <span className="l-header__toggle-line" />
+        </button>
       </div>
     </header>
   );

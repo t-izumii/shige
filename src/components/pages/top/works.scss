@@ -31,6 +31,10 @@
 
     &[data-reverse] {
       grid-template-columns: 45fr 55fr;
+
+      @include sp {
+        grid-template-columns: 1fr;
+      }
     }
 
     @include sp {
@@ -59,16 +63,12 @@
     }
 
     .c-picture {
-      display: block;
-      width: 100%;
       height: 100%;
-    }
+      aspect-ratio: unset;
 
-    .c-picture img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s var(--easing-smooth);
+      img {
+        transition: transform 0.8s var(--easing-smooth);
+      }
     }
   }
 

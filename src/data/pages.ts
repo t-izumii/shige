@@ -14,7 +14,7 @@ export type PageSlug =
 // ページメタデータの定義
 export const pages: Record<PageSlug, PageMeta> = {
   home: {
-    title: 'ホーム',
+    title: '住まいとともに、人の暮らしを豊かに。',
     description: 'Astro で構築されたウェブサイトのホームページ',
   },
   about: {
@@ -39,11 +39,13 @@ export const pages: Record<PageSlug, PageMeta> = {
   },
   renovation: {
     title: 'リノベーション事業',
-    description: '既存の住まいを再生し、機能性とデザイン性を兼ね備えた空間へと生まれ変わらせます。',
+    description:
+      '既存の住まいを再生し、機能性とデザイン性を兼ね備えた空間へと生まれ変わらせます。',
   },
   homestaging: {
     title: 'ホームステージング事業',
-    description: 'ホームステージャー1級のスタッフがお客様の物件を魅力的に見える空間にステージングします。',
+    description:
+      'ホームステージャー1級のスタッフがお客様の物件を魅力的に見える空間にステージングします。',
   },
 } as const;
 

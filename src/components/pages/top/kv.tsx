@@ -4,6 +4,18 @@ import Picture from '../../ui/picture';
 export default function Kv() {
   return (
     <section className="p-kv">
+      <div className="p-kv__copy">
+        <p className="p-kv__copy-en">Renovation &amp; Homestaging</p>
+        <h2 className="p-kv__copy-ja">
+          住まいとともに、<br />
+          人の暮らしを豊かに。
+        </h2>
+        <p className="p-kv__copy-sub">
+          空間に新たな価値を吹き込み、<br />
+          理想の住まいを共に実現します。
+        </p>
+      </div>
+
       <Carousel
         options={{
           type: 'fade',
@@ -27,7 +39,7 @@ export default function Kv() {
         <div class="p-kv__slide">
           <Picture
             img={{
-              src: '/assets/images/top/kv-01.jpg',
+              src: '/assets/images/top/kv-02.jpg',
               alt: '',
               width: 1440,
               height: 810,
@@ -37,7 +49,7 @@ export default function Kv() {
         <div class="p-kv__slide">
           <Picture
             img={{
-              src: '/assets/images/top/kv-01.jpg',
+              src: '/assets/images/top/kv-03.jpg',
               alt: '',
               width: 1440,
               height: 810,

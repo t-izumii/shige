@@ -38,8 +38,8 @@ export type PageMeta = {
 // デフォルトのサイトメタデータ
 export const siteMeta: SiteMeta = {
   // 基本情報
-  title: 'Astro Basics',
-  description: 'Astro で構築されたウェブサイト',
+  title: 'HEYA Works',
+  description: '',
   siteUrl: 'https://example.com/htdocs', // baseUrlを含む完全なURL
   locale: 'ja_JP',
 
@@ -58,7 +58,9 @@ export const siteMeta: SiteMeta = {
 // ページメタデータを生成するヘルパー関数
 export function generatePageMeta(pageMeta?: PageMeta) {
   return {
-    title: pageMeta?.title ? `${pageMeta.title} | ${siteMeta.title}` : siteMeta.title,
+    title: pageMeta?.title
+      ? `${pageMeta.title} | ${siteMeta.title}`
+      : siteMeta.title,
     description: pageMeta?.description || siteMeta.description,
     ogImage: pageMeta?.ogImage || siteMeta.ogImage,
     ogType: pageMeta?.ogType || siteMeta.ogType,

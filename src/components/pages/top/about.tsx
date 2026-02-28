@@ -8,7 +8,7 @@ export default function About() {
       <div className="p-about__media">
         <Picture
           img={{
-            src: '/assets/images/top/kv-01.jpg',
+            src: '/assets/images/top/img-03.jpg',
             alt: '',
             width: 1440,
             height: 900,
@@ -18,7 +18,9 @@ export default function About() {
 
       <div className="p-about__content">
         <div className="p-about__inner">
-          <Heading className="p-about__heading" enLabel="About Us">私たちについて</Heading>
+          <Heading className="p-about__heading" enLabel="About Us">
+            私たちについて
+          </Heading>
 
           <div className="p-about__rule">
             <span className="p-about__rule-dot" />
@@ -26,19 +28,26 @@ export default function About() {
 
           <div className="p-about__copy">
             <p className="p-about__lead">
-              「住まい」は、人の暮らしそのものを映す鏡です。<br />
-              長年にわたりリノベーション事業に携わるなかで、<br />
-              私たちは数多くのお客様の「こうしたい」という<br />
+              「住まい」は、人の暮らしそのものを映す鏡です。
+              <br />
+              長年にわたりリノベーション事業に携わるなかで、
+              <br />
+              私たちは数多くのお客様の「こうしたい」という
+              <br />
               思いと向き合ってきました。
             </p>
             <p className="p-about__lead">
-              老朽化した空間に新しい息吹を吹き込み、<br />
-              住む人の個性と暮らし方に寄り添った空間づくりを、<br />
+              老朽化した空間に新しい息吹を吹き込み、
+              <br />
+              住む人の個性と暮らし方に寄り添った空間づくりを、
+              <br />
               これからも誠実に続けていきます。
             </p>
             <p className="p-about__lead">
-              良心的な価格と丁寧なヒアリングを軸に、<br />
-              理想の空間の実現をサポートします。<br />
+              良心的な価格と丁寧なヒアリングを軸に、
+              <br />
+              理想の空間の実現をサポートします。
+              <br />
               どうぞお気軽にご相談ください。
             </p>
           </div>
